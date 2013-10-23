@@ -1,0 +1,21 @@
+indexes:
+
+- kind: Request
+  properties:
+  - name: dateTime
+  - name: destCity
+  - name: startCity
+  - name: username
+
+- kind: Ride
+  properties:
+  - name: availSeatNum
+  - name: destCity
+  - name: startCity
+  - name: dateTime
+
+- kind: Ride
+  properties:
+  - name: destCity
+  - name: startCity
+  - name: dateTime

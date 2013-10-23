@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".WelcomeActivity" >
+
+    <TextView
+        android:id="@+id/text_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:textSize="20sp"/>
+
+    <Button
+        android:onClick="postRide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/post_ride" />
+
+    <Button
+        android:onClick="searchRide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_ride" />
+
+    <Button
+        android:onClick="manageRide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/manage_ride" />
+
+    <Button
+        android:onClick="logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logout" />
+
+</LinearLayout>

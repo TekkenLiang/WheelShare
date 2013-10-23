@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.wheelshare"
+          android:versionCode="1"
+          android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <permission
+        android:name="com.example.wheelshare.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.wheelshare.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.example.wheelshare" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.example.wheelshare.GCMIntentService" />
+
+        <activity
+            android:name="com.example.wheelshare.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.RegistrationActivity"
+            android:label="@string/title_activity_registration"
+            android:parentActivityName="com.example.wheelshare.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wheelshare.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.example.wheelshare.WelcomeActivity"
+            android:label="@string/title_activity_welcome"
+            android:parentActivityName="com.example.wheelshare.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wheelshare.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.PostRideActivity"
+            android:label="@string/title_activity_post_ride"
+            android:parentActivityName="com.example.wheelshare.WelcomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wheelshare.WelcomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.SearchRideActivity"
+            android:label="@string/title_activity_search_ride"
+            android:parentActivityName="com.example.wheelshare.WelcomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wheelshare.WelcomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.ShowSearchResultActivity"
+            android:label="@string/title_activity_search_ride"
+            android:parentActivityName="com.example.wheelshare.SearchRideActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wheelshare.SearchRideActivity" />
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.ShowRideActivity"
+            android:label="@string/title_activity_show_ride"
+            android:parentActivityName="com.example.wheelshare.ShowSearchResultActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wheelshare.ShowSearchResultActivity" />
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.ManageActivity"
+            android:label="@string/title_activity_manage"
+            android:parentActivityName="com.example.wheelshare.WelcomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wheelshare.WelcomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.ManagePostedRideActivity"
+            android:label="@string/title_activity_manage_posted_ride"
+            android:parentActivityName="com.example.wheelshare.ManageActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wheelshare.ManageActivity" />
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.ManageJoinedRideActivity"
+            android:label="@string/title_activity_manage_joined_ride"
+            android:parentActivityName="com.example.wheelshare.ManageActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wheelshare.ManageActivity" />
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.Payment"
+            android:label="@string/title_activity_payment" >
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.InviteActivity"
+            android:label="@string/title_activity_invite" >
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.ContactActivity"
+            android:label="@string/title_activity_contact" >
+        </activity>
+        <activity
+            android:name="com.example.wheelshare.ReceiveMessageActivity"
+            android:label="@string/message_reply" >
+        </activity>
+    </application>
+
+</manifest>
